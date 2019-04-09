@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 class CreateTodo extends React.Component {
-   baseUrl = "http://192.168.0.145:3006"
+   baseUrl = "http://192.168.0.144:3006"
    state = {
       description: "",
       responsible: "",
@@ -43,7 +43,7 @@ class CreateTodo extends React.Component {
       let status;
       if (this.state.status) {
          status = (
-            <div class={this.state.error ? "alert alert-danger" : "alert alert-success"} role="alert">
+            <div className={this.state.error ? "alert alert-danger" : "alert alert-success"} role="alert">
                {this.state.status}
             </div>
          )
@@ -73,6 +73,7 @@ class CreateTodo extends React.Component {
                      required={true}
                      onInput={(event) => this.handleInput(event, 'responsible')} />
                </div>
+               <div className="d-flex mb-1">Select priority</div>
                <div className="d-flex mb-2">
                   <div className="form-check mr-3">
                      <input
@@ -98,7 +99,7 @@ class CreateTodo extends React.Component {
                         onChange={(event) => this.handleInput(event, 'priority')} />
                      <label className="form-check-label" htmlFor="exampleRadios1">Medium</label>
                   </div>
-                  <div className="form-check mr-3">
+                  <div className="form-check">
                      <input
                         className="form-check-input"
                         type="radio"
